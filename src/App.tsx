@@ -2,19 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { HiSun, HiMoon, HiHome } from 'react-icons/hi';
 import Home from './pages/home';
-
-
 import ProjectList from './pages/PROJECTS/projectList';
 import ProjectDetail from './pages/PROJECTS/projectDetails';
 import ScrollToTop from './components/ScrollToTop';
 import ContactDashboard from './pages/contact';
-
+import ResumeSection from './pages/PROJECTS/resume';
+import Footer from './pages/footer';
+import SignUp from './pages/signup';
+import Login from './pages/login';
+import Dashboard from './pages/Dashboard';
+import { AuthProvider } from './components/authContext'; // AuthProvider for global authentication
 
 const App: React.FC = () => {
   // Track the current theme state
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem('theme') === 'dark';
-  });
+  const [darkMode, setDarkMode] = useState(() => localStorage.getItem('theme') === 'dark');
 
   // Toggle dark mode
   const toggleDarkMode = () => {
@@ -32,44 +33,49 @@ const App: React.FC = () => {
   }, [darkMode]);
 
   return (
-    <>
-   
-    <Router>
-      
-      <div className={`min-h-screen ${darkMode ? 'bg-black text-white' : 'bg-white text-gray-900'}`}>
-        
-        {/* Main Container */}
-        <div className="container mx-auto p-4">
-          <ScrollToTop>
-            {/* Routes */}
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/contact" element={<ContactDashboard />} />
-              <Route path="/projects" element={<ProjectList />} /> {/* List of projects */}
-              <Route path="/projects/:id" element={<ProjectDetail />} /> {/* Individual project details */}
-            </Routes>
-          </ScrollToTop>
+    <AuthProvider>
+      <Router>
+        <div className={`min-h-screen ${darkMode ? 'bg-black text-white' : 'bg-white text-gray-900'}`}>
+          {/* Main Container */}
+          <div className="container mx-auto p-4">
+            <ScrollToTop>
+              {/* Routes */}
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/resume" element={<ResumeSection />} />
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/contact" element={<ContactDashboard />} />
+                <Route path="/projects" element={<ProjectList />} />
+                <Route path="/projects/:id" element={<ProjectDetail />} />
+              </Routes>
+            </ScrollToTop>
+          </div>
+
+          {/* Home Button (Bottom Left) */}
+          <Link
+            to="/"
+            className="fixed bottom-4 left-4 p-3 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white shadow-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300"
+            aria-label="Go to Home Page"
+          >
+            <HiHome size={24} />
+          </Link>
+
+          {/* Dark Mode Toggle Button (Bottom Right) */}
+          <button
+            onClick={toggleDarkMode}
+            className="fixed bottom-4 right-4 p-3 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white shadow-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300"
+            aria-label="Toggle Dark Mode"
+          >
+            {darkMode ? <HiSun size={24} /> : <HiMoon size={24} />}
+          </button>
         </div>
 
-        {/* Home Button (Left) */}
-        <Link 
-          to="/" 
-          className="fixed bottom-4 left-4 p-3 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white shadow-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300"
-          aria-label="Go to Home Page"
-        >
-          <HiHome size={24} />
-        </Link>
-
-        {/* Dark Mode Toggle Button (Right) */}
-        <button 
-          onClick={toggleDarkMode}
-          className="fixed bottom-4 right-4 p-3 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white shadow-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300"
-          aria-label="Toggle Dark Mode"
-        >
-          {darkMode ? <HiSun size={24} /> : <HiMoon size={24} />}
-        </button>
-      </div>
-    </Router></>
+        {/* Footer */}
+        <Footer />
+      </Router>
+    </AuthProvider>
   );
 };
 

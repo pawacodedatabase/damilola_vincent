@@ -25,6 +25,13 @@ import fuud_5  from '../PROJECTS/Tomato/fuud_5.png';
 
 
 
+import ola_1  from '../PROJECTS/Tomato/ola_1.jpg';
+import ola_2  from '../PROJECTS/Tomato/ola_2.jpg';
+import ola_3  from '../PROJECTS/Tomato/ola_3.jpg';
+import ola_4  from '../PROJECTS/Tomato/ola_4.jpg';
+
+
+
 // Example projects data
 export const projects: Project[] = [
   {
@@ -45,10 +52,10 @@ export const projects: Project[] = [
   },
   {
     id: '3',
-    name: "Project Three",
-    images: ["image5.jpg", "image6.jpg"],
-    date: "2024-11-01",
-    description: "This is the description for the third project.",
-    link: "https://www.example.com/project-three",
+    name: "OllaRealtor",
+    images: [ola_1, ola_2, ola_3, ola_4],
+    date: "2024-12-03",
+    description: "OllaRealtor is a modern, feature-rich web application designed for a real estate company to streamline property listings, enhance user engagement, and simplify the property search process. Built using React and TypeScript, this platform combines high performance, scalability, and type safety to deliver a seamless experience for users and administrators alike.",
+    link: "https://ollarealtortest.vercel.app/",
   },
 ];

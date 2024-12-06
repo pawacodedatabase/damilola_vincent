@@ -33,8 +33,8 @@ const RandomProject: React.FC = () => {
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-semibold text-center text-indigo-600 dark:text-lime-300 mb-8">
-        Check Out These Projects
+      <h1 className="text-3xl font-semibold text-center text-indigo-600 dark:text-blue-700 mb-8">
+        Random Projects
       </h1>
       
       {/* Random Project Cards */}

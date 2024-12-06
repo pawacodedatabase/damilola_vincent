@@ -14,8 +14,7 @@ const PageComponent: React.FC = () => {
           </div>
           <h2 className="text-4xl font-bold text-purple-600">Design</h2>
           <p className="text-gray-600 dark:text-gray-300">
-            I'm probably not the typical designer positioned behind an Illustrator artboard adjusting pixels, but I design.
-            Immersed in stylesheets tweaking font sizes and contemplating layouts is where you'll find me (~_^). I'm committed to creating fluent user experiences while staying fashionable.
+          I’m a passionate designer with a keen eye for detail and a love for creating seamless, user-centric experiences. With expertise in Figma, Canva, and web design, I craft visually compelling and intuitive designs that bring ideas to life. Whether I’m working on UI/UX, branding, or digital illustrations, I’m always focused on blending creativity with functionality to deliver designs that not only look great but also work effortlessly. Let’s make your vision a reality!
           </p>
           <div className="mt-4 grid grid-cols-4 gap-2">
             {[...Array(4)].map((_, index) => (
@@ -28,7 +27,7 @@ const PageComponent: React.FC = () => {
         <div className="flex flex-col items-start animate-fade-in-right space-y-4">
           <h2 className="text-4xl font-bold text-purple-600">Engineering</h2>
           <p className="text-gray-600 dark:text-gray-300">
-            In building JavaScript applications, I'm equipped with just the right tools, and can absolutely function independently to deliver fast, resilient solutions optimized for scale — performance and scalability are priorities on my radar.
+          I’m a dedicated front-end engineer with a strong foundation in building interactive, responsive, and user-friendly web applications. With expertise in HTML, CSS, JavaScript, React, and TypeScript, I specialize in transforming design concepts into functional, visually appealing websites. I’m passionate about creating seamless user experiences, optimizing performance, and ensuring cross-browser compatibility. Continuously staying up to date with the latest front-end technologies, I aim to deliver clean, maintainable code and bring innovative ideas to life in every project.
           </p>
           <div className="mt-4 grid grid-cols-4 gap-2">
             {[...Array(4)].map((_, index) => (

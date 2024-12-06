@@ -1,58 +1,113 @@
+import React from 'react';
+import {
+  FaEnvelope,
+  
+  FaLinkedin,
+  FaInstagram,
+  FaTwitter,
+  FaGithub,
+  FaWhatsapp,
+} from 'react-icons/fa';
 
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'; 
-import google from '../../src/assets/images/googleplay.png'
-
-const Footer = () => {
-  return (
-    <footer className=" border border-gray-mazx00 py-10">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-6">
-          <div className="text-center md:text-left">
-            <h2 className="text-2xl font-semibold mb-2 shadow-md p-5 px-10 text-red-400 text-center hover:bg-gray-100">Download Our App</h2>
-            <div className="flex justify-center md:justify-start">
-              <a
-                href="#"
-                className="mr-4"
-                aria-label="Download on the App Store"
-              >
-                <img
-                  src={google}
-                
-                  alt="Download on the App Store"
-                  className="h-10"
-                />
-              </a>
-              
-            </div>
-          </div>
-          <div className="mt-6 md:mt-0">
-            <h2 className="text-2xl font-semibold mb-2 shadow-md p-5 px-10 text-red-400 text-center mb-4 hover:bg-gray-100">Follow Us</h2>
-            <div className="flex justify-center md:justify-end shadow-md p-5 px-10 hover:bg-gray-100">
-              <a href="#" className="mx-2" aria-label="Facebook">
-                
-                <div  className="text-2xl hover:text-[#c30101]">
-                 <FaFacebook /> </div>
-              </a>
-              <a href="#" className="mx-2" aria-label="Twitter">
-                <div className='text-2xl hover:text-[#c30101]"'> <FaTwitter /></div>
-              </a>
-              <a href="#" className="mx-2" aria-label="Instagram">
-                <div className='text-2xl hover:text-[#c30101]"'> <FaInstagram  /></div>
-              </a>
-              <a href="#" className="mx-2" aria-label="LinkedIn">
-                <div className='text-2xl hover:text-[#c30101]"'> <FaLinkedin  /></div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="text-center">
-          <p className="text-sm">
-            &copy; {new Date().getFullYear()} TurboThrills. All rights reserved.
+const Footer: React.FC = () => (
+  <footer className="bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900 text-gray-800 dark:text-gray-200 py-10">
+    <div className="max-w-6xl mx-auto px-6">
+      {/* Grid Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* About Section */}
+        <div className="text-center md:text-left">
+          <h2 className="text-xl font-semibold mb-4">About Me</h2>
+          <p className="text-sm leading-relaxed">
+            I am a front-end developer passionate about creating responsive, visually appealing designs. With expertise
+            in React, TypeScript, and UI/UX design, I strive to craft engaging web experiences.
           </p>
         </div>
+
+        {/* Contact Section */}
+        <div className="text-center">
+          <h2 className="text-xl font-semibold mb-4">Connect with Me</h2>
+          <div className="flex justify-center space-x-6">
+            <a
+              href="mailto:whakhydoh@gmail.com"
+              className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-600 transition"
+              title="Email"
+            >
+              <FaEnvelope size={30} />
+            </a>
+            <a
+              href="https://wa.me/+2348053208997"
+              className="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-600 transition"
+              title="WhatsApp"
+            >
+              <FaWhatsapp size={30} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/damilola-ogunbanwo-1347b5284/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-700 dark:text-blue-500 hover:text-blue-900 dark:hover:text-blue-700 transition"
+              title="LinkedIn"
+            >
+              <FaLinkedin size={30} />
+            </a>
+            <a
+              href="https://instagram.com/its.damilola"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink-600 dark:text-pink-400 hover:text-pink-800 dark:hover:text-pink-600 transition"
+              title="Instagram"
+            >
+              <FaInstagram size={30} />
+            </a>
+            <a
+              href="https://twitter.com/vicesensei"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-500 transition"
+              title="Twitter"
+            >
+              <FaTwitter size={30} />
+            </a>
+            <a
+              href="https://github.com/pawacodedatabase"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition"
+              title="GitHub"
+            >
+              <FaGithub size={30} />
+            </a>
+          </div>
+        </div>
+
+        {/* Newsletter Section */}
+        <div className="text-center md:text-right">
+          <h2 className="text-xl font-semibold mb-4">Stay Connected</h2>
+          <p className="text-sm mb-4">
+            Subscribe to get updates about new projects and opportunities.
+          </p>
+          <form className="flex flex-col sm:flex-row justify-center md:justify-end">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="p-2 rounded-l border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
+            />
+            <button
+              type="submit"
+              className="p-2 bg-blue-600 text-white rounded-r hover:bg-blue-500 transition"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
       </div>
-    </footer>
-  );
-};
+
+      {/* Footer Bottom */}
+      <div className="mt-10 text-center text-sm text-gray-600 dark:text-gray-400">
+        <p>© {new Date().getFullYear()} Damilola Vincent. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+);
 
 export default Footer;
