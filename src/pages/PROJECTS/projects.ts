@@ -30,6 +30,15 @@ import ola_2  from '../PROJECTS/Tomato/ola_2.jpg';
 import ola_3  from '../PROJECTS/Tomato/ola_3.jpg';
 import ola_4  from '../PROJECTS/Tomato/ola_4.jpg';
 
+import super_1 from './FOOD/super_1.jpg';
+import super_2 from './FOOD/super_2.jpg';
+import super_3 from './FOOD/super_3.jpg';
+import super_4 from './FOOD/super_4.jpg';
+import super_5 from './FOOD/super_5.jpg';
+import super_6 from './FOOD/super_6.jpg';
+import super_7 from './FOOD/super_7.jpg';
+
+
 
 
 // Example projects data
@@ -52,6 +61,14 @@ export const projects: Project[] = [
   },
   {
     id: '3',
+    name: "SuperLicks Catering Services",
+    images: [super_1, super_2, super_3, super_4, super_5, super_6, super_7],
+    date: "2024-12-11",
+    description: "SuperLicks is a dynamic and visually appealing food web application designed to elevate the dining experience for users. The platform combines a sleek user interface with robust functionality, enabling customers to explore, order, and enjoy a wide variety of meals. Whether you’re craving local delicacies or international cuisines, SuperLicks is your go-to destination for convenient and satisfying food options.",
+    link: "https://superlicks.vercel.app/",
+  },
+  {
+    id: '4',
     name: "OllaRealtor",
     images: [ola_1, ola_2, ola_3, ola_4],
     date: "2024-12-03",

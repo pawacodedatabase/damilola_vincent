@@ -1,7 +1,18 @@
-import React from 'react';
-import img from '../assets/img/hero.png';
 
+import img from '../assets/img/hero.png';
+import  { useState, useEffect } from 'react';
 const Hero: React.FC = () => {
+  const [user, setUser] = useState<any>(null);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      setUser(JSON.parse(storedUser)); // Retrieve user data from localStorage
+    }
+  }, []);
+
+ 
+  
   return (
     <section
       className="relative flex items-center justify-center h-[80vh] bg-cover bg-center bg-fixed text-center transition-colors duration-500 ease-in-out dark:bg-black"
@@ -14,9 +25,19 @@ const Hero: React.FC = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-3xl px-4 py-12 text-black dark:text-white">
-        <h1 className="text-5xl font-semibold tracking-tight md:text-6xl lg:text-7xl animate-fade-in-up bg-gradient-to-r from-pink-500 via-blue-500 to-blue-500 text-transparent bg-clip-text">
-          Hi, I'm Damilola Vincent
-        </h1>
+       
+
+        {user ? (
+          <>
+            <h1 className="text-4xl font-semibold tracking-tight md:text-6xl lg:text-7xl animate-fade-in-up bg-gradient-to-r from-pink-500 via-blue-500 to-blue-500 text-transparent bg-clip-text">
+              Hello <p className='font-semibold text-green-400'>{user.username}</p> , I'm Damilola Vincent
+            </h1>
+     
+          </>
+        ) : (
+          <p className="text-4xl font-semibold tracking-tight md:text-6xl lg:text-7xl animate-fade-in-up bg-gradient-to-r from-pink-500 via-blue-500 to-blue-500 text-transparent bg-clip-text">Hi <p className='font-semibold text-green-400'>Guest</p>, I'm Damilola Vincent</p>
+        )}
+
         <p className="mt-6 text-lg md:text-xl lg:text-2xl animate-fade-in-up delay-200 text-pink-500 dark:text-gray-300">
           A passionate web developer specializing in modern JavaScript frameworks and building beautiful, responsive web applications.
         </p>
