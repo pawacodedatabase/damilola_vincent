@@ -30,13 +30,13 @@ import ola_2  from '../PROJECTS/Tomato/ola_2.jpg';
 import ola_3  from '../PROJECTS/Tomato/ola_3.jpg';
 import ola_4  from '../PROJECTS/Tomato/ola_4.jpg';
 
-import super_1 from './FOOD/super_1.jpg';
-import super_2 from './FOOD/super_2.jpg';
-import super_3 from './FOOD/super_3.jpg';
-import super_4 from './FOOD/super_4.jpg';
-import super_5 from './FOOD/super_5.jpg';
-import super_6 from './FOOD/super_6.jpg';
-import super_7 from './FOOD/super_7.jpg';
+import super_1 from '../PROJECTS/Tomato/super_1.jpg';
+import super_2 from '../PROJECTS/Tomato/super_2.jpg';
+import super_3 from '../PROJECTS/Tomato/super_3.jpg';
+import super_4 from '../PROJECTS/Tomato/super_4.jpg';
+import super_5 from '../PROJECTS/Tomato/super_5.jpg';
+import super_6 from '../PROJECTS/Tomato/super_6.jpg';
+import super_7 from '../PROJECTS/Tomato/super_7.jpg';
 
 
 
