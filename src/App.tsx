@@ -13,6 +13,7 @@ import Login from './pages/login';
 import Dashboard from './pages/Dashboard';
 import { AuthProvider } from './components/authContext'; // AuthProvider for global authentication
 
+
 const App: React.FC = () => {
   // Track the current theme state
   const [darkMode, setDarkMode] = useState(() => localStorage.getItem('theme') === 'dark');
@@ -35,9 +36,12 @@ const App: React.FC = () => {
   return (
     <AuthProvider>
       <Router>
+        {/* Header */}
+       
+
+        {/* Main Container */}
         <div className={`min-h-screen ${darkMode ? 'bg-black text-white' : 'bg-white text-gray-900'}`}>
-          {/* Main Container */}
-          <div className="container mx-auto p-4">
+          <div className="container mx-auto ">
             <ScrollToTop>
               {/* Routes */}
               <Routes>

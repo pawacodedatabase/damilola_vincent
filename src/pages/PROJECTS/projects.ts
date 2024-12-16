@@ -5,7 +5,8 @@ export interface Project {
   images: string[];  // Array of image URLs or file paths
   date: string;  // Date the project was created or started
   description: string;
-  link: string;  
+  link: string;
+  rating?: number;  
 }
 
 import tomato_1 from '../PROJECTS/Tomato/tomato_1.jpg';
@@ -50,6 +51,7 @@ export const projects: Project[] = [
     date: "2024-10-01",
     description: "Tomato is a modern web app built with React, TailwindCSS, and TypeScript that allows users to explore recipes, create meal plans, track nutritional intake, and share their favorite dishes. The app includes an Add to Cart feature for users to select ingredients or products and easily purchase them. With a smooth and responsive design, users can enjoy a seamless experience across devices while managing their culinary needs and meal planning.",
     link: "https://tomato-psi.vercel.app/",
+    rating: 5
   },
   {
     id: '2',
@@ -66,6 +68,7 @@ export const projects: Project[] = [
     date: "2024-12-11",
     description: "SuperLicks is a dynamic and visually appealing food web application designed to elevate the dining experience for users. The platform combines a sleek user interface with robust functionality, enabling customers to explore, order, and enjoy a wide variety of meals. Whether you’re craving local delicacies or international cuisines, SuperLicks is your go-to destination for convenient and satisfying food options.",
     link: "https://superlicks.vercel.app/",
+    rating:4
   },
   {
     id: '4',

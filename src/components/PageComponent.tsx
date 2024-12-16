@@ -1,40 +1,76 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import designImage from '../assets/img/design.jpeg'; // Replace with the actual path to the Design image
+import engineeringImage from '../assets/img/engr.jpeg'; // Replace with the actual path to the Engineering image
 
 const PageComponent: React.FC = () => {
   return (
-    <div className="min-h-screen bg-transparent dark:bg-gray-900 flex items-center justify-center p-8">
+    <div className="min-h-screen bg-transparent dark:bg-black flex items-center justify-center p-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl w-full">
         
         {/* Design Section */}
-        <div className="flex flex-col items-start animate-fade-in-left space-y-4">
-          <div className="flex items-center space-x-2">
-            <svg width="24" height="24" className="text-purple-500 fill-current">
-              <circle cx="12" cy="12" r="12" />
-            </svg>
+        <motion.div
+          className="group flex flex-col items-center md:items-start space-y-4 p-1 bg-white dark:bg-[#2E1A47] rounded-md shadow-lg cursor-pointer"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          whileHover={{ scale: 1.05 }}
+        >
+          <div className="w-full h-48 overflow-hidden rounded-lg">
+            <motion.img
+              src={designImage}
+              alt="Design"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
           </div>
-          <h2 className="text-4xl font-bold text-purple-600">Design</h2>
-          <p className="text-gray-600 dark:text-gray-300">
-          I’m a passionate designer with a keen eye for detail and a love for creating seamless, user-centric experiences. With expertise in Figma, Canva, and web design, I craft visually compelling and intuitive designs that bring ideas to life. Whether I’m working on UI/UX, branding, or digital illustrations, I’m always focused on blending creativity with functionality to deliver designs that not only look great but also work effortlessly. Let’s make your vision a reality!
+          <h2 className="text-2xl font-bold dark:text-[#fff] text-purple-500">
+            Design
+          </h2>
+          <p className="dark:text-gray-300 text-sm px-6 text-gray-600">
+            I’m a passionate designer with a keen eye for detail and a love for creating seamless, user-centric experiences...
           </p>
           <div className="mt-4 grid grid-cols-4 gap-2">
             {[...Array(4)].map((_, index) => (
-              <div key={index} className="w-3 h-3 bg-purple-300 rounded-full animate-ping"></div>
+              <div
+                key={index}
+                className="w-3 h-3 bg-purple-300 mb-2 rounded-full dark:bg-gray-300 animate-ping"
+              ></div>
             ))}
           </div>
-        </div>
+        </motion.div>
         
         {/* Engineering Section */}
-        <div className="flex flex-col items-start animate-fade-in-right space-y-4">
-          <h2 className="text-4xl font-bold text-purple-600">Engineering</h2>
-          <p className="text-gray-600 dark:text-gray-300">
-          I’m a dedicated front-end engineer with a strong foundation in building interactive, responsive, and user-friendly web applications. With expertise in HTML, CSS, JavaScript, React, and TypeScript, I specialize in transforming design concepts into functional, visually appealing websites. I’m passionate about creating seamless user experiences, optimizing performance, and ensuring cross-browser compatibility. Continuously staying up to date with the latest front-end technologies, I aim to deliver clean, maintainable code and bring innovative ideas to life in every project.
+        <motion.div
+          className="group flex flex-col items-center md:items-start space-y-4 p-1 bg-white dark:bg-[#2E1A47] rounded-md shadow-lg cursor-pointer"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          whileHover={{ scale: 1.05 }}
+        >
+          <div className="w-full h-48 overflow-hidden rounded-lg">
+            <motion.img
+              src={engineeringImage}
+              alt="Engineering"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+          </div>
+          <h2 className="text-2xl font-bold text-purple-500 dark:text-[#fff]">
+            Engineering
+          </h2>
+          <p className="dark:text-gray-300 text-sm text-gray-600 px-6">
+            I’m a dedicated front-end engineer with a strong foundation in building interactive, responsive, and user-friendly web applications...
           </p>
           <div className="mt-4 grid grid-cols-4 gap-2">
             {[...Array(4)].map((_, index) => (
-              <div key={index} className="w-3 h-3 border border-purple-300 rounded-full"></div>
+              <div
+                key={index}
+                className="w-3 h-3 mb-2 border border-indigo-500 dark:border-gray-300 rounded-full"
+              ></div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

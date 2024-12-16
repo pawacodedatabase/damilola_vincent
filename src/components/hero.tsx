@@ -1,58 +1,101 @@
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import img1 from "../assets/img/2ban.jpeg"; // Image 1
+import img2 from "../assets/img/banner1.jpeg"; // Image 2
+import img3 from "../assets/img/pexels-photo-10725897.jpeg"; // Image 3
+const images = [img1, img2, img3]; // Array of images
 
-import img from '../assets/img/hero.png';
-import  { useState, useEffect } from 'react';
 const Hero: React.FC = () => {
   const [user, setUser] = useState<any>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('user');
+    const storedUser = localStorage.getItem("user");
     if (storedUser) {
-      setUser(JSON.parse(storedUser)); // Retrieve user data from localStorage
+      setUser(JSON.parse(storedUser));
     }
+
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval); // Clean up interval
   }, []);
 
- 
-  
+  // Define the button content and links based on the current image index
+  const buttonContent = [
+    {
+      title: "View Projects",
+      link: "/projects",
+    },
+    {
+      title: "Get In Touch",
+      link: "/contact",
+    },
+    {
+      title: "Learn More",
+      link: "/about",
+    },
+  ];
+
+  const textContent = [
+    {
+      heading: user ? `Welcome, ${user.username}!` : "Hi, Guest!",
+      subheading: "I’m Damilola Vincent, a creative web developer crafting modern and elegant solutions.",
+    },
+    {
+      heading: "Explore My Work",
+      subheading: "I create beautiful, functional websites that empower businesses and individuals.",
+    },
+    {
+      heading: "Innovative Solutions Await",
+      subheading: "Bringing your ideas to life with cutting-edge technology and design.",
+    },
+  ];
+
   return (
     <section
-      className="relative flex items-center justify-center h-[80vh] bg-cover bg-center bg-fixed text-center transition-colors duration-500 ease-in-out dark:bg-black"
+      className="relative w-full h-[80vh] bg-cover bg-center bg-fixed text-center transition-all duration-1000 ease-in-out"
       style={{
-        backgroundImage: `url(${img})`, // Replace with your preferred background image URL
+        backgroundImage: `url(${images[currentImageIndex]})`,
       }}
     >
-      {/* Overlay that changes color based on dark mode */}
-      <div className="absolute inset-0 bg-white dark:bg-black opacity-80 dark:opacity-70"></div>
+      {/* Gradient Overlay for Better Text Visibility */}
+      <div className="absolute inset-0 bg-white dark:bg-black opacity-70"></div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-3xl px-4 py-12 text-black dark:text-white">
-       
+      {/* Content Container (Centered vertically and horizontally) */}
+      <div className="relative flex items-center justify-center flex-col text-center text-white space-y-6 px-6 max-w-4xl mx-auto h-full">
+        {/* Main Title */}
+        <h1 className="text-3xl font-semibold tracking-tight text-black dark:text-purple-500 md:text-5xl lg:text-6xl animate__animated animate__fadeIn animate__delay-1s">
+          {textContent[currentImageIndex].heading}
+        </h1>
 
-        {user ? (
-          <>
-            <h1 className="text-4xl font-semibold tracking-tight md:text-6xl lg:text-7xl animate-fade-in-up bg-gradient-to-r from-pink-500 via-blue-500 to-blue-500 text-transparent bg-clip-text">
-              Hello <p className='font-semibold text-green-400'>{user.username}</p> , I'm Damilola Vincent
-            </h1>
-     
-          </>
-        ) : (
-          <p className="text-4xl font-semibold tracking-tight md:text-6xl lg:text-7xl animate-fade-in-up bg-gradient-to-r from-pink-500 via-blue-500 to-blue-500 text-transparent bg-clip-text">Hi <p className='font-semibold text-green-400'>Guest</p>, I'm Damilola Vincent</p>
-        )}
+        {/* Subtitle */}
+        <h2 className="text-sm  font-light leading-relaxed text-black dark:text-gray-200 md:text-xl lg:text-2xl animate__animated animate__fadeIn animate__delay-2s">
+          {textContent[currentImageIndex].subheading}
+        </h2>
 
-        <p className="mt-6 text-lg md:text-xl lg:text-2xl animate-fade-in-up delay-200 text-pink-500 dark:text-gray-300">
-          A passionate web developer specializing in modern JavaScript frameworks and building beautiful, responsive web applications.
-        </p>
-
-        <br /> <br />
-          <a href="/projects" className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-blue-500 rounded-full shadow-md group">
-     <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-blue-500 group-hover:translate-x-0 ease">
-         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-     </span>
-     <span className="absolute flex items-center justify-center w-full h-full text-blue-500 transition-all duration-300 transform group-hover:translate-x-full ease">View Projects</span>
-     <span className="relative invisible">Button Text</span>
- </a>
-        
-        
+        {/* Action Buttons */}
+        <div className="flex flex-wrap justify-center gap-6 mt-8">
+          <Link to={buttonContent[0].link}>
+            <button className="px-6 py-3 border-2 bg-purple-500 text-white hover:bg-white hover:text-black transition">
+              {buttonContent[0].title}
+            </button>
+          </Link>
+          <Link to={buttonContent[1].link}>
+            <button className="px-6 py-3 border-2 bg-black text-white hover:bg-white hover:text-black transition">
+              {buttonContent[1].title}
+            </button>
+          </Link>
+        </div>
       </div>
+
+      {/* Decorative Elements */}
+      <div className="absolute bottom-10 left-10 hidden md:block w-16 h-16 bg-[#ff7b7b] rounded-full opacity-20 animate-pulse"></div>
+      <div className="absolute top-10 right-10 hidden md:block w-24 h-24 bg-[#ffbaba] rounded-full opacity-10"></div>
+
+      {/* Bottom Border with Opacity */}
+     
     </section>
   );
 };

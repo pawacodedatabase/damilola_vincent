@@ -11,7 +11,7 @@ import RandomProject from './PROJECTS/randomProjects';
 const Home: React.FC = () => {
   return (
     <>
-  <Header/>
+   <Header />
   <Hero />
   <PageComponent />  
   <RandomProject/>
