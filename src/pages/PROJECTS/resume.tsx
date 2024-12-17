@@ -4,6 +4,7 @@ import { FaUserAlt, FaBriefcase, FaGraduationCap, FaTools, FaDownload, FaReact, 
 import img from '../../assets/img/hero - Copy.png'
 import cv from '../../assets/Damilola-Vincent_Cv-upd.pdf'
 import Header from '../header';
+import EmailPopup from '../../components/Banner';
 
 const ResumeSection: React.FC = () => {
   // State to trigger animations once the component is mounted
@@ -16,6 +17,7 @@ const ResumeSection: React.FC = () => {
 
   return (
     <>
+    <EmailPopup/>
       <Header />
       <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans">
         <div className="max-w-5xl mx-auto p-6">

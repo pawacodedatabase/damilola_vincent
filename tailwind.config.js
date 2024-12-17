@@ -8,20 +8,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Add any custom colors here if needed, e.g., custom dark/light shades
+        // Custom colors for dark/light mode
         'dark-bg': '#121212',
         'light-text': '#f4f4f4',
       },
       animation: {
         'fade-in-up': 'fadeInUp 1s ease-out',
-        // Add other custom animations here if necessary
+        'marquee': 'marquee 10s linear infinite', // New marquee animation
       },
       keyframes: {
         fadeInUp: {
           '0%': { opacity: 0, transform: 'translateY(10px)' },
           '100%': { opacity: 1, transform: 'translateY(0)' },
         },
-        // Add more keyframes if you want additional animations
+        marquee: {
+          '0%': { transform: 'translateX(100%)' }, // Start from the right
+          '100%': { transform: 'translateX(-100%)' }, // Move to the left
+        },
       },
     },
   },
