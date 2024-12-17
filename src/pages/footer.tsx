@@ -10,7 +10,7 @@ import {
 } from 'react-icons/fa';
 
 const Footer: React.FC = () => (
-  <footer className="bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900 text-gray-800 dark:text-gray-200 py-10">
+  <footer className="bg-[#ccc] dark:bg-black text-gray-800 dark:text-gray-200 py-10">
     <div className="max-w-6xl mx-auto px-6">
       {/* Grid Layout */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -94,7 +94,7 @@ const Footer: React.FC = () => (
             />
             <button
               type="submit"
-              className="p-2 bg-blue-600 text-white rounded-r hover:bg-blue-500 transition"
+              className="p-2 bg-purple-600 text-white rounded-r hover:bg-purple-500 transition"
             >
               Subscribe
             </button>

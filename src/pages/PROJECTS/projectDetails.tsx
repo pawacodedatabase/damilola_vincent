@@ -25,6 +25,8 @@ const ProjectDetail: React.FC = () => {
   const [name, setName] = useState<string>('');  // Added name state
   const [selectedAvatar, setSelectedAvatar] = useState<string>('');
   const [comments, setComments] = useState<{ name: string; comment: string; avatar: string }[]>([]);
+  
+  
 
   const [avatarIndex, setAvatarIndex] = useState(0); // Track the current slide of avatars
 

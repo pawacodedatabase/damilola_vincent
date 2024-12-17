@@ -27,8 +27,8 @@ const ContactDashboard: React.FC = () => {
       <Header />
       {/* Contact Section */}
       <div className="text-center mb-10">
-        <h1 className="text-4xl font-bold animate__animated animate__fadeIn">Contact / Hire Me</h1>
-        <p className="mt-4 animate__animated animate__fadeIn animate__delay-1s">I'm a React web developer ready to bring your ideas to life.</p>
+        <h1 className="text-3xl font-thin animate__animated animate__fadeIn mt-10">Contact / Hire Me</h1>
+        <p className="mt-4 animate__animated animate__fadeIn animate__delay-1s text-sm p-8 dark:text-purple-500 ">I'm a React / Typescript  web developer ready to bring your ideas to life.</p>
       </div>
 
       {/* Dashboard Section */}
@@ -36,14 +36,22 @@ const ContactDashboard: React.FC = () => {
         {/* Greeting */}
         {user ? (
           <>
-            <h1 className="text-2xl  mb-3 font-semibold animate__animated animate__fadeIn animate__delay-2s">
-              Hello {user.username} , I'm Damilola Vincent
+            <h1 className="text-2xl  mb-3 font-thin animate__animated animate__fadeIn animate__delay-2s dark:text-purple-400">
+              Hello <span className='text-green-400'>{user.username}</span>  , I'm Damilola Vincent
             </h1>
-            <p className='text-green-600 border p-3 rounded-full w-[full] text-center'>{user.email}</p>
-            <p className="text-gray-500 dark:text-gray-400 animate__animated animate__fadeIn animate__delay-3s">{currentDate}</p>
+            <hr />
+            <p className='text-green-600  p-3 text-sm  w-[full] text-center'>{user.email}</p>
+            <hr />
+            <p className="text-gray-500 dark:text-gray-400 animate__animated animate__fadeIn animate__delay-3s mt-4">{currentDate}</p>
           </>
         ) : (
-          <p>Loading user information...</p>
+          <>
+          <p className='text-2xl  mb-3 font-thin animate__animated animate__fadeIn animate__delay-2s dark:text-purple-400'> Hello Guest , I'm Damilola Vincent</p>
+          <hr />
+          <p className="text-gray-500 dark:text-gray-400 animate__animated animate__fadeIn animate__delay-3s mt-4">{currentDate}</p>
+          <br />
+          <hr/>
+          </>
         )}
 
 
@@ -51,10 +59,13 @@ const ContactDashboard: React.FC = () => {
 
         {/* Project Summary */}
         <div className="mt-6 text-gray-700 dark:text-gray-300 animate__animated animate__fadeIn animate__delay-4s">
-          <p>20+ Projects Completed  </p>
-          <p>Specialized in React, JavaScript, Python and TypeScript</p>
-          <div className="flex items-center bg-gray-100 dark:bg-gray-800 p-4 mt-4 rounded-lg shadow-md">
-            <FiBriefcase className="w-6 h-6 text-gray-600 dark:text-gray-300" />
+          <p className='text-xl text-center font-thin dark:text-purple-400 mb-6'>Project Summary</p>
+          <br /> <hr />
+          <p className='text-sm m-3 animate__animated animate__fadeIn animate__delay-1s'>20+ Projects Completed  </p>
+          <hr /> <br />
+          <p className=' animate__animated animate__fadeIn animate__delay-1s text-sm  dark:text-purple-500'> Specialized in React, JavaScript, Python and TypeScript</p>
+          <div className="flex items-center bg-gray-100 dark:bg-[#2E1A47] p-4 mt-4 rounded-lg shadow-md">
+            <FiBriefcase className="w-6 h-6 text-gray-600 dark:text-gray-300 " />
             <div className="ml-4">
               <p className="text-xl font-bold">Available for Hire</p>
               <p className="text-sm text-gray-500 dark:text-gray-400">Let's work together on your next project</p>
@@ -65,32 +76,32 @@ const ContactDashboard: React.FC = () => {
         {/* Favorite Skills */}
         <h2 className="mt-6 mb-4 text-lg font-medium animate__animated animate__fadeIn animate__delay-5s">Favorite Skills</h2>
         <div className="grid grid-cols-2 gap-4">
-          <button className="flex items-center justify-center bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 py-2 px-4 rounded-lg animate__animated animate__fadeIn animate__delay-6s">
+          <button className="flex items-center justify-center bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 py-2 px-4 rounded-lg animate__animated animate__fadeIn animate__delay-6s hover:dark:bg-purple-400 hover:dark:text-black">
             React
           </button>
-          <button className="flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-500 py-2 px-4 rounded-lg animate__animated animate__fadeIn animate__delay-7s">
+          <button className="flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-500 py-2 px-4 rounded-lg animate__animated animate__fadeIn animate__delay-7s hover:dark:bg-purple-400 hover:dark:text-black">
             JavaScript 
           </button>
-          <button className="flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-500 py-2 px-4 rounded-lg animate__animated animate__fadeIn animate__delay-8s">
+          <button className="flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-500 py-2 px-4 rounded-lg animate__animated animate__fadeIn animate__delay-8s hover:dark:bg-purple-400 hover:dark:text-black">
             TypeScript
           </button>
-          <button className="flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-500 py-2 px-4 rounded-lg animate__animated animate__fadeIn animate__delay-9s">
+          <button className="flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-500 py-2 px-4 rounded-lg animate__animated animate__fadeIn animate__delay-9s hover:dark:bg-purple-400 hover:dark:text-black">
             TailwindCSS
           </button>
         </div>
 
         {/* Social Icons Section */}
         <div className="mt-8 flex justify-center space-x-6 animate__animated animate__fadeIn animate__delay-10s">
-          <div className="w-6 h-6 text-gray-400 dark:text-gray-500 text-2xl hover:dark:text-white hover:text-black">
+          <div className="w-6 h-6 text-gray-400 dark:text-gray-500 text-2xl hover:dark:text-purple-400 hover:text-black">
             <a href="#"><FaFacebook /></a>
           </div>
-          <div className="w-6 h-6 text-gray-400 dark:text-gray-500 text-2xl hover:dark:text-white hover:text-black">
+          <div className="w-6 h-6 text-gray-400 dark:text-gray-500 text-2xl hover:dark:text-purple-400 hover:text-black">
             <a href="https://x.com/viceSensei"><FaTwitter /></a>
           </div>
-          <div className="w-6 h-6 text-gray-400 dark:text-gray-500 text-2xl hover:dark:text-white hover:text-black">
+          <div className="w-6 h-6 text-gray-400 dark:text-gray-500 text-2xl hover:dark:text-purple-400 hover:text-black">
             <a href="https://instagram.com/its.damilola"><FaInstagram /></a>
           </div>
-          <div className="w-6 h-6 text-gray-400 dark:text-gray-500 text-2xl hover:dark:text-white hover:text-black">
+          <div className="w-6 h-6 text-gray-400 dark:text-gray-500 text-2xl hover:dark:text-purple-400 hover:text-black">
             <a href="https://www.linkedin.com/in/damilola-ogunbanwo-1347b5284/"><FaLinkedin /></a>
           </div>
         </div>
@@ -101,7 +112,7 @@ const ContactDashboard: React.FC = () => {
         {/* Download Resume Button */}
         <div className="mt-8 text-center">
           <a href={cv} download>
-            <button className="flex items-center justify-center bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-300">
+            <button className="flex items-center justify-center bg-purple-600 text-white py-3 px-6  hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-300">
               <FiDownload className="w-5 h-5 mr-2" />
               Download Resume
             </button>

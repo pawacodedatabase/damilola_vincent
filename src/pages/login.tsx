@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaUserAlt, FaLock } from 'react-icons/fa';
 import axios from 'axios';
 import Header from './header';
+import { FaBan } from 'react-icons/fa6';
 
 const Login: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -50,18 +51,21 @@ const Login: React.FC = () => {
   return (
     <>
     <Header/>
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans">
+    <div className="min-h-screen bg-gray-100 dark:bg-black text-gray-900 dark:text-gray-100 font-sans">
       <div className="max-w-lg mx-auto p-6">
-        <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-xl">
-          <h2 className="text-3xl font-bold text-center mb-8 text-blue-600 dark:text-blue-400">Login</h2>
+        <div className="bg-white dark:bg-[#2E1A47] p-8 rounded-lg shadow-xl">
+          <h2 className="text-2xl font-thin text-center mb-8 text-blue-600 dark:text-blue-400">Login</h2>
+
+          <div className='text-sm flex gap-2 mb-4 border p-2 border-purple-800'><p className='text-red-500'><FaBan/></p><p className='text-sm font-thin px-5'>This project database isn't hosted yet...</p>
+            </div>
 
           {errorMessage && <div className="text-red-500 text-center mb-4">{errorMessage}</div>}
           {successMessage && <div className="text-green-500 text-center mb-4">{successMessage}</div>}
 
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
-              <div className="flex items-center border-2 rounded-md p-2 mt-2">
+              
+              <div className="flex items-center  rounded-md p-2 mt-2">
                 <FaUserAlt className="text-gray-600 dark:text-gray-400 mr-3" />
                 <input
                   type="email"
@@ -69,7 +73,7 @@ const Login: React.FC = () => {
                   id="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full bg-transparent text-gray-900 dark:text-gray-100 focus:outline-none"
+                  className="w-full bg-transparent border-b text-gray-900 dark:text-gray-100 focus:outline-none"
                   placeholder="email@example.com"
                   required
                 />
@@ -77,8 +81,8 @@ const Login: React.FC = () => {
             </div>
 
             <div className="mb-4">
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Password</label>
-              <div className="flex items-center border-2 rounded-md p-2 mt-2">
+              
+              <div className="flex items-center  rounded-md p-2 mt-2">
                 <FaLock className="text-gray-600 dark:text-gray-400 mr-3" />
                 <input
                   type="password"
@@ -86,17 +90,23 @@ const Login: React.FC = () => {
                   id="password"
                   value={formData.password}
                   onChange={handleChange}
-                  className="w-full bg-transparent text-gray-900 dark:text-gray-100 focus:outline-none"
+                  className="w-full bg-transparent text-gray-900 dark:text-gray-100 focus:outline-none border-b"
                   placeholder="********"
                   required
                 />
               </div>
             </div>
 
+ <div className='text-sm flex m-3'>
+              <p>Don't have an account?
+                </p> <Link to="/signup"><span className='underline font-semibold ml-3'>Sign up</span>
+                </Link></div>
+
+
             <div className="mb-4">
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white p-3 rounded-md hover:bg-blue-500 transition duration-300 ease-in-out"
+                className="w-full bg-purple-600 text-white p-3  hover:bg-purple-500 transition duration-300 ease-in-out"
               >
                 Log In
               </button>

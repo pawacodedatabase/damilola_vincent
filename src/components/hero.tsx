@@ -2,8 +2,39 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import img1 from "../assets/img/2ban.jpeg"; // Image 1
 import img2 from "../assets/img/banner1.jpeg"; // Image 2
-import img3 from "../assets/img/pexels-photo-10725897.jpeg"; // Image 3
-const images = [img1, img2, img3]; // Array of images
+import img3 from "../assets/img/pexels-photo-10725897.jpeg"; 
+import monkey_1 from '../assets/img/monkey_1.jpg';
+import monkey_2 from '../assets/img/monkey_2.jpg';
+import monkey_3 from '../assets/img/monkey_3.jpg';
+import monkey_4 from '../assets/img/monkey_4.jpg';
+import monkey_5 from '../assets/img/monkey_5.jpg';
+import monkey_6 from '../assets/img/monkey_6.jpg';
+import monkey_7 from '../assets/img/monkey_7.jpg';
+import monkey_8 from '../assets/img/monkey_8.jpg';
+import monkey_9 from '../assets/img/monkey_9.jpg';
+import monkey_10 from '../assets/img/monkey_10.jpg';
+import monkey_11 from '../assets/img/monkey_11.jpg';
+import monkey_12 from '../assets/img/monkey_12.jpg';
+import monkey_13 from '../assets/img/monkey_13.jpg';
+import monkey_14 from '../assets/img/monkey_14.jpg';
+import monkey_15 from '../assets/img/monkey_15.jpg';
+
+
+const images = [img1, img2, img3 ,   monkey_1,
+  monkey_2,
+  monkey_3,
+  monkey_4,
+  monkey_5,
+  monkey_6,
+  monkey_7,
+  monkey_8,
+  monkey_9,
+  monkey_10,
+  monkey_11,
+  monkey_12,
+  monkey_13,
+  monkey_14,
+  monkey_15,]; // Array of images
 
 const Hero: React.FC = () => {
   const [user, setUser] = useState<any>(null);
@@ -17,13 +48,65 @@ const Hero: React.FC = () => {
 
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Change image every 5 seconds
+    }, 2000); // Change image every 5 seconds
 
     return () => clearInterval(interval); // Clean up interval
   }, []);
 
   // Define the button content and links based on the current image index
   const buttonContent = [
+    {
+      title: "View Projects",
+      link: "/projects",
+    },
+    {
+      title: "View Projects",
+      link: "/projects",
+    },
+    {
+      title: "View Projects",
+      link: "/projects",
+    },
+    {
+      title: "View Projects",
+      link: "/projects",
+    },
+    {
+      title: "View Projects",
+      link: "/projects",
+    },
+    {
+      title: "View Projects",
+      link: "/projects",
+    },
+    {
+      title: "View Projects",
+      link: "/projects",
+    },
+    {
+      title: "View Projects",
+      link: "/projects",
+    },
+    {
+      title: "View Projects",
+      link: "/projects",
+    },
+    {
+      title: "View Projects",
+      link: "/projects",
+    },
+    {
+      title: "View Projects",
+      link: "/projects",
+    },
+    {
+      title: "View Projects",
+      link: "/projects",
+    },
+    {
+      title: "View Projects",
+      link: "/projects",
+    },
     {
       title: "View Projects",
       link: "/projects",
@@ -36,6 +119,15 @@ const Hero: React.FC = () => {
       title: "Learn More",
       link: "/about",
     },
+    {
+      title: "Learn More",
+      link: "/about",
+    },
+    {
+      title: "Learn More",
+      link: "/about",
+    },
+    
   ];
 
   const textContent = [
@@ -46,6 +138,67 @@ const Hero: React.FC = () => {
     {
       heading: "Explore My Work",
       subheading: "I create beautiful, functional websites that empower businesses and individuals.",
+    },
+    {
+      heading: "Explore My Work",
+      subheading: "I create beautiful, functional websites that empower businesses and individuals.",
+    },
+    
+    {
+      heading: user ? `Welcome, ${user.username}!` : "Hi, Guest!",
+      subheading: "I’m Damilola Vincent, a creative web developer crafting modern and elegant solutions.",
+    },
+    {
+      heading: user ? `Welcome, ${user.username}!` : "Hi, Guest!",
+      subheading: "I’m Damilola Vincent, a creative web developer crafting modern and elegant solutions.",
+    },
+    {
+      heading: user ? `Welcome, ${user.username}!` : "Hi, Guest!",
+      subheading: "I’m Damilola Vincent, a creative web developer crafting modern and elegant solutions.",
+    },
+    {
+      heading: user ? `Welcome, ${user.username}!` : "Hi, Guest!",
+      subheading: "I’m Damilola Vincent, a creative web developer crafting modern and elegant solutions.",
+    },
+    {
+      heading: user ? `Welcome, ${user.username}!` : "Hi, Guest!",
+      subheading: "I’m Damilola Vincent, a creative web developer crafting modern and elegant solutions.",
+    },
+    {
+      heading: "Explore My Work",
+      subheading: "I create beautiful, functional websites that empower businesses and individuals.",
+    },
+    {
+      heading: "Explore My Work",
+      subheading: "I create beautiful, functional websites that empower businesses and individuals.",
+    },
+    {
+      heading: "Explore My Work",
+      subheading: "I create beautiful, functional websites that empower businesses and individuals.",
+    },
+    {
+      heading: "Explore My Work",
+      subheading: "I create beautiful, functional websites that empower businesses and individuals.",
+    },
+    {
+      heading: "Explore My Work",
+      subheading: "I create beautiful, functional websites that empower businesses and individuals.",
+    },
+    {
+      heading: "Innovative Solutions Await",
+      subheading: "Bringing your ideas to life with cutting-edge technology and design.",
+    },
+    {
+      heading: "Innovative Solutions Await",
+      subheading: "Bringing your ideas to life with cutting-edge technology and design.",
+    },
+    {
+      heading: "Innovative Solutions Await",
+      subheading: "Bringing your ideas to life with cutting-edge technology and design.",
+    },
+    {
+      heading: "Innovative Solutions Await",
+      subheading: "Bringing your ideas to life with cutting-edge technology and design.",
     },
     {
       heading: "Innovative Solutions Await",
